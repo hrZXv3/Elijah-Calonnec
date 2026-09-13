@@ -1,0 +1,11 @@
+[
+  {
+    "slug": "rootme-command-injection",
+    "title": "Root-Me : App-Script, Command injection (démo)",
+    "summary": "Exploitation d'une injection de commande système via un champ non filtré.",
+    "date": "2026-02-10",
+    "platform": "Root-Me",
+    "tags": ["Web", "Command Injection"]
+  }
+]
+
