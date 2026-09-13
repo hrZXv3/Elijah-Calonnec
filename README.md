@@ -1,7 +1,3 @@
-# Portfolio hrZXv3
-
-Site 100% statique (HTML/CSS/JS, aucun build, aucun backend, aucune base de données). Fait pour être hébergé sur GitHub Pages.
-
 ## Structure
 
 ```
@@ -38,7 +34,6 @@ portfolio-site/
    - `slug` doit correspondre exactement au nom du fichier `.md` (sans l'extension).
    - `tags` alimente les filtres de la page writeups.
 
-3. Commit + push. GitHub Pages redéploie automatiquement en 1–2 minutes.
 
 ## Ajouter une image dans un writeup
 
@@ -69,37 +64,3 @@ Le Markdown est juste du texte avec quelques symboles qui changent la mise en fo
 | `![description](assets/img/photo.png)` | Insère une image |
 | `> une remarque` | Bloc de citation mis en valeur (comme l'encadré d'avertissement dans le writeup de démo) |
 | ligne vide entre deux paragraphes | Sépare les paragraphes |
-
-Rien d'autre à savoir : vous écrivez comme dans un traitement de texte, ces quelques symboles suffisent à tout mettre en forme.
-
-Supprimez `writeups/exemple-a-remplacer.md` et son entrée dans `manifest.json` quand vous avez publié votre premier vrai writeup.
-
-## Mettre à jour le CV
-
-Remplacez `cv/Elijah_Calonnec_CV.pdf` par la nouvelle version (même nom de fichier) et commit. Le bouton "CV" sur le site pointe toujours vers ce fichier.
-
-## Pourquoi pas de backend / pas de login ?
-
-Le site n'a ni base de données ni panneau d'administration en ligne. **"Être le seul à pouvoir écrire dessus" est déjà garanti par les permissions de votre repo GitHub** : seuls les comptes que vous ajoutez comme collaborateurs peuvent push du contenu. C'est plus simple à opérer et plus sûr qu'un système de login/mot de passe custom (pas de mot de passe à fuiter, pas d'API à sécuriser, pas de serveur à maintenir/patcher).
-
-Si un jour vous voulez éditer depuis un navigateur sans toucher à un terminal : GitHub permet d'éditer/créer des fichiers directement dans l'interface web du repo (bouton "Add file" / l'icône crayon sur un fichier existant), ce qui revient exactement au même workflow sans avoir besoin de `git` en local.
-
-## Déploiement (GitHub Pages)
-
-1. Le contenu de `portfolio-site/` doit être à la racine du repo (ou dans `/docs` si vous préférez, à condition de configurer Pages en conséquence).
-2. Dans les Settings du repo GitHub → Pages → Source : "Deploy from a branch", branche `main`, dossier `/ (root)`.
-3. Le site est alors disponible sur `https://<votre-user>.github.io/<nom-du-repo>/` (ou `https://<votre-user>.github.io/` si le repo s'appelle exactement `<votre-user>.github.io`).
-
-### Domaine personnalisé (optionnel)
-
-Si vous achetez un nom de domaine : ajoutez un fichier `CNAME` à la racine contenant votre domaine (ex. `elijahcalonnec.fr`), puis configurez chez votre registrar un enregistrement `CNAME` (sous-domaine) ou 4 enregistrements `A` (domaine racine) pointant vers les IPs de GitHub Pages. Le tout est documenté dans Settings → Pages une fois le domaine renseigné.
-
-## Développement local
-
-Aucune dépendance à installer. Ouvrez `index.html` dans un navigateur, ou lancez un petit serveur local pour éviter les soucis de `fetch()` sur les fichiers locaux (`file://`) :
-
-```bash
-python -m http.server 8000
-```
-
-puis ouvrez `http://localhost:8000`.
