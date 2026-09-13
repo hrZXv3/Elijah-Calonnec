@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writeups | hrZXv3</title>
+<meta name="description" content="Writeups CTF, OSINT et threat intelligence par Elijah Calonnec (hrZXv3).">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="index.html" class="nav-brand"><span class="dot"></span> hrZXv3</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#about">whoami</a>
+      <a href="index.html#platforms">plateformes</a>
+      <a href="index.html#skills">compétences</a>
+      <a href="index.html#experience">parcours</a>
+      <a href="index.html#projects">projets</a>
+      <a href="writeups.html" class="active">writeups</a>
+      <a href="index.html#contact">contact</a>
+      <a href="cv/Elijah_Calonnec_CV.pdf" target="_blank" class="btn btn-primary" style="padding:7px 16px;">CV ↓</a>
+    </div>
+  </div>
+</nav>
+
+<header class="wr-header" style="padding-top:64px; padding-bottom:56px;">
+  <div class="container">
+    <div class="section-label">writeups</div>
+    <h1>CTF, OSINT &amp; Threat Intelligence</h1>
+    <p style="color:var(--text-dim); max-width:640px; margin-top:12px;">
+      Méthodologie, outils et enseignements tirés de mes challenges : Root-Me, Trace Labs, OSINT CTFs et exercices de threat intel.
+    </p>
+  </div>
+</header>
+
+<section style="padding-top:48px;">
+  <div class="container">
+    <div class="writeups-toolbar">
+      <input type="text" id="searchBox" class="search-box" placeholder="Rechercher un writeup (titre, plateforme, outil...)">
+      <div class="filter-tags" id="filterTags"></div>
+    </div>
+    <div id="writeupList" class="writeup-list"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> Elijah Calonnec · <a href="https://github.com/hrZXv3" target="_blank">GitHub</a>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/writeups.js"></script>
+</body>
+</html>
