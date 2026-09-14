@@ -1,6 +1,6 @@
 ## Résumé
 
-Investigation d'un kit de phishing imitant PayPal (`paypal-pay.com`), ciblant des victimes germanophones. Le kit se déroule en trois étapes (identifiants → code 2FA → fausse confirmation de paiement) et exfiltre les données volées en temps réel via un webhook Discord. L'analyse a également révélé que le domaine, bien que ré-enregistré début septembre 2026, existe en réalité depuis 2010 — laissé à l'abandon pendant des années avant sa réutilisation.
+Investigation d'un kit de phishing imitant PayPal (`paypal-pay.com`), ciblant des victimes germanophones. Le kit se déroule en trois étapes (identifiants → code 2FA → fausse confirmation de paiement) et exfiltre les données volées en temps réel via un webhook Discord. L'analyse a également révélé que le domaine, bien que ré-enregistré début septembre 2026, existe en réalité depuis 2010 laissé à l'abandon pendant des années avant sa réutilisation.
 
 > **Avertissement** : cette investigation s'appuie uniquement sur des sources publiques (urlscan.io, crt.sh, Wayback Machine, WHOIS) et sur la lecture passive du code source de la page. Aucune interaction active avec le site (aucune soumission de formulaire) n'a été effectuée.
 
@@ -8,7 +8,7 @@ Investigation d'un kit de phishing imitant PayPal (`paypal-pay.com`), ciblant de
 
 - Indicateur découvert via le feed public **OpenPhish**
 - URL initiale : `https://www.paypal-pay.com/signin.html`
-- Un premier candidat (`checkouts-paypal.lat`) avait été envisagé mais s'est révélé être un domaine mort (NXDOMAIN) sans données historiques exploitables — documenté comme dead-end avant de basculer sur ce cas.
+- Un premier candidat (`checkouts-paypal.lat`) avait été envisagé mais s'est révélé être un domaine mort (NXDOMAIN) sans données historiques exploitables documenté comme dead-end avant de basculer sur ce cas.
 
 ## Étape 1 — Page de connexion (`signin.html`)
 
@@ -40,7 +40,7 @@ Après soumission, la victime est redirigée vers `verification.html`.
 
 ## Étape 2 — Faux code de vérification (`verification.html`)
 
-Deuxième étage du kit : une page réclamant un code à 6 chiffres, simulant une demande de 2FA/OTP. Trois événements distincts sont envoyés au **même webhook Discord** (chargement de page, clic sur "renvoyer le code", soumission du code) — l'attaquant est notifié en temps réel de la progression de la victime dans le scénario.
+Deuxième étage du kit : une page réclamant un code à 6 chiffres, simulant une demande de 2FA/OTP. Trois événements distincts sont envoyés au **même webhook Discord** (chargement de page, clic sur "renvoyer le code", soumission du code) l'attaquant est notifié en temps réel de la progression de la victime dans le scénario.
 
 Le fait que ce soit exactement le même webhook que sur `signin.html` confirme qu'il s'agit d'un seul et même déploiement, pas de deux campagnes distinctes.
 
@@ -64,7 +64,7 @@ Cette incohérence suggère fortement un template réutilisé et mal nettoyé pl
 | Certificat TLS | Émis 2026-09-09, valide 3 mois |
 | Verdict urlscan.io | *Potentially Malicious* — marque ciblée : PayPal (Financial) |
 
-L'hébergement est sur de l'infrastructure cloud partagée (AWS), ce qui limite l'intérêt d'un pivot par IP — ce n'est probablement pas une infrastructure dédiée à l'acteur.
+L'hébergement est sur de l'infrastructure cloud partagée (AWS), ce qui limite l'intérêt d'un pivot par IP ce n'est probablement pas une infrastructure dédiée à l'acteur.
 
 ## Un domaine plus ancien qu'il n'y paraît
 
