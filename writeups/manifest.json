@@ -1,11 +1,11 @@
 [
-  {
-    "slug": "rootme-command-injection",
-    "title": "Introduction",
-    "summary": "Rapport.",
-    "date": "2026-02-10",
-    "platform": "Rapport",
-    "tags": ["CTI"]
-  }
+{
+  "slug": "paypal-pay-phishing-investigation",
+  "title": "Anatomie d'un kit de phishing PayPal — de la découverte à l'attribution du domaine",
+  "summary": "Investigation d'un kit de phishing PayPal en 3 étapes exfiltrant vers Discord, avec découverte d'un domaine ancien réactivé après abandon.",
+  "date": "2026-09-14",
+  "platform": "OSINT / CTI",
+  "tags": ["Phishing", "OSINT", "CTI", "Threat Intel"]
+}
 ]
 
