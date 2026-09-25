@@ -104,7 +104,7 @@ Un décodage Base64 via base64decode permet de retrouver le mot de passe en clai
 
 **Démarche :** Le lab fournit une capture, `WebCam.png`, issue d'une caméra IP en direct. Une recherche d'image inversée sur Google identifie la source : il s'agit du flux en direct filmé depuis le dôme du bâtiment principal de l'[Université de Notre-Dame](https://dome.nd.edu/), située dans l'Indiana, aux États-Unis.
 
-![Capture WebCam.png fournie par le lab](images/lespion/WebCam.png)
+![Capture WebCam.png fournie par le lab](assets/img/lespion/WebCam.png)
 
 **Réponse :** `Indiana`
 
