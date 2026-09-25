@@ -30,11 +30,11 @@ Artefacts fournis par le lab :
 
 **Démarche :** En poursuivant la lecture de `Login Page.js`, plus bas dans le code, on trouve une ligne `Password` accompagnée de la mention « Password(base64) ». La valeur `UGljYXNzb0JhZ3VldHRlOTk=` n'est donc pas le mot de passe lui-même, mais sa version encodée en Base64, ce que confirment aussi sa structure (caractères alphanumériques) et le `=` de remplissage final.
 
-![Mot de passe encodé en Base64 dans Login Page.js](images/lespion/psswrd.png)
+![Mot de passe encodé en Base64 dans Login Page.js](assets/img/lespion/psswrd.png)
 
 Un décodage Base64 via base64decode permet de retrouver le mot de passe en clair.
 
-![Décodage de la valeur Base64](images/lespion/decode.png)
+![Décodage de la valeur Base64](assets/img/lespion/decode.png)
 
 **Réponse :** `PicassoBaguette99`
 
@@ -44,7 +44,7 @@ Un décodage Base64 via base64decode permet de retrouver le mot de passe en clai
 
 **Démarche :** En parcourant les dépôts publics du profil [EMarseille99](https://github.com/EMarseille99), l'un d'eux s'appelle [xmrig](https://github.com/EMarseille99/xmrig). Sa description, « RandomX, CryptoNight, AstroBWT and Argon2 CPU/GPU miner », liste des algorithmes de minage de cryptomonnaie, ce qui confirme qu'il s'agit d'un outil de minage.
 
-![Dépôt xmrig parmi les dépôts populaires du profil](images/lespion/xmrig.png)
+![Dépôt xmrig parmi les dépôts populaires du profil](assets/img/lespion/xmrig.png)
 
 **Réponse :** `xmrig`
 
@@ -54,7 +54,7 @@ Un décodage Base64 via base64decode permet de retrouver le mot de passe en clai
 
 **Démarche :** Le pseudonyme `EMarseille99` identifié sur GitHub sert de point de pivot. Une recherche sur [WhatsMyName](https://whatsmyname.me/), qui teste la présence d'un pseudo sur des centaines de plateformes, fait ressortir un compte Steam portant ce même nom : [steamcommunity.com/id/EMarseille99](https://steamcommunity.com/id/EMarseille99/). Le rattachement à la cible ne repose pas uniquement sur le pseudo : le profil Steam utilise la même photo de profil que le compte GitHub, ce qui confirme qu'il s'agit bien de la même personne.
 
-![Profil Steam emarseille99 avec la même photo que le GitHub](images/lespion/steam.png)
+![Profil Steam emarseille99 avec la même photo que le GitHub](assets/img/lespion/steam.png)
 
 **Réponse :** `Steam`
 
@@ -64,7 +64,7 @@ Un décodage Base64 via base64decode permet de retrouver le mot de passe en clai
 
 **Démarche :** La même recherche [WhatsMyName](https://whatsmyname.me/) sur le pseudonyme `EMarseille99` remonte également, dans ses résultats de moteurs de recherche, deux entrées Instagram : un profil « Émilie Marseille (@emarseille99) » et une publication « Add me for some games ;) ». Le pseudo est identique à celui des comptes GitHub et Steam, et la publication fait écho au profil gaming déjà identifié sur Steam.
 
-![Résultats Instagram remontés par WhatsMyName](images/lespion/insta.png)
+![Résultats Instagram remontés par WhatsMyName](assets/img/lespion/insta.png)
 
 **Réponse :** `https://www.instagram.com/emarseille99/`
 
@@ -74,7 +74,7 @@ Un décodage Base64 via base64decode permet de retrouver le mot de passe en clai
 
 **Démarche :** Sur le profil Instagram, une publication accompagnée de la légende « Once in a lifetime holiday here, love me some slings x » indique clairement une photo de vacances. L'image montre un bâtiment très reconnaissable : trois tours surmontées d'une plateforme en forme de navire. Une recherche d'image inversée sur Google identifie le Marina Bay Sands et son SkyPark, à Singapour.
 
-![Photo de vacances publiée sur Instagram](images/lespion/vac.png)
+![Photo de vacances publiée sur Instagram](assets/img/lespion/vac.png)
 
 **Réponse :** `Singapore`
 
@@ -84,7 +84,7 @@ Un décodage Base64 via base64decode permet de retrouver le mot de passe en clai
 
 **Démarche :** Sur le profil Instagram, une publication en deux photos porte la légende « Nice to meet friends & family Photo 1/2 », ce qui la relie à un moment passé avec sa famille. La seconde photo montre une avenue avec, en arrière-plan, une tour immédiatement reconnaissable : le Burj Khalifa, plus haute tour du monde, située à Dubaï. Pour confirmer l'identification plutôt que de me fier uniquement à la silhouette, une recherche d'image inversée sur Google confirme qu'il s'agit bien du Burj Khalifa.
 
-![Photo publiée sur Instagram avec le Burj Khalifa en arrière-plan](images/lespion/dubai.png)
+![Photo publiée sur Instagram avec le Burj Khalifa en arrière-plan](assets/img/lespion/dubai.png)
 
 **Réponse :** `Dubai`
 
@@ -94,7 +94,7 @@ Un décodage Base64 via base64decode permet de retrouver le mot de passe en clai
 
 **Démarche :** Le lab fournit une photo, `office.jpg`, montrant le bâtiment dans lequel l'entreprise a un bureau. Une recherche d'image inversée sur Google identifie le lieu : il s'agit de la gare de Birmingham New Street, dont on reconnaît la façade en inox réfléchissant.
 
-![Photo office.jpg fournie par le lab](images/lespion/office.jpg)
+![Photo office.jpg fournie par le lab](assets/img/lespion/office.jpg)
 
 **Réponse :** `Birmingham`
 
