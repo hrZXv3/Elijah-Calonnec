@@ -7,5 +7,13 @@
   "platform": "OSINT / CTI",
   "tags": ["Phishing", "OSINT", "CTI", "Threat Intel"]
 }
+{
+  "slug": "cyberdefenders-lespion",
+  "title": "L'espion : pister une menace interne par OSINT",
+  "summary": "Investigation OSINT d'un ancien employé soupçonné de fuite de données, du premier indice à la géolocalisation, via le lab CyberDefenders L'espion.",
+  "date": "2026-09-25",
+  "platform": "CyberDefenders",
+  "tags": ["OSINT", "CTI", "Insider Threat", "Géolocalisation", "CyberDefenders"]
+}
 ]
 
