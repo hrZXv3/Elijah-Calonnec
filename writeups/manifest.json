@@ -29,5 +29,15 @@
       "Géolocalisation",
       "CyberDefenders"
     ]
-  }
+  },
+  {
+  "slug": "cyberdefenders-intel101",
+  "title": "Intel101 : reconnaissance OSINT par WHOIS, archives web et recherche d'image",
+  "title_en": "Intel101: OSINT reconnaissance with WHOIS, web archives and image search",
+  "summary": "Writeup du lab CyberDefenders Intel101 : WHOIS, fuite d'information par capture d'écran, archives Wayback Machine et géolocalisation par recherche d'image inversée.",
+  "summary_en": "Writeup of the CyberDefenders Intel101 lab: WHOIS, information leak through a screenshot, Wayback Machine archives and geolocation through reverse image search.",
+  "date": "2026-09-25",
+  "platform": "CyberDefenders",
+  "tags": ["OSINT", "CTI", "WHOIS", "Wayback Machine", "CyberDefenders"]
+}
 ]
