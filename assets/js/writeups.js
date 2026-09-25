@@ -12,14 +12,23 @@ fetch('writeups/manifest.json')
     buildTagFilters();
     render();
   })
-  .catch(() => { listEl.innerHTML = '<div class="empty-state">Impossible de charger les writeups.</div>'; });
+  .catch(() => { listEl.innerHTML = `<div class="empty-state">${tr('loadError')}</div>`; });
+
+document.addEventListener('langchange', () => {
+  if (!allPosts.length) return;
+  buildTagFilters();
+  render();
+});
 
 function buildTagFilters() {
   const tags = new Set();
   allPosts.forEach(p => (p.tags || []).forEach(t => tags.add(t)));
-  filterTagsEl.innerHTML = ['Tous', ...Array.from(tags).sort()].map(t =>
-    `<button class="filter-tag ${t === 'Tous' ? 'active' : ''}" data-tag="${t === 'Tous' ? '' : t}">${t}</button>`
-  ).join('');
+  const ALL = '__all__';
+  filterTagsEl.innerHTML = [ALL, ...Array.from(tags).sort()].map(t => {
+    const isAll = t === ALL;
+    const isActive = isAll ? !activeTag : activeTag === t;
+    return `<button class="filter-tag ${isActive ? 'active' : ''}" data-tag="${isAll ? '' : t}">${isAll ? tr('all') : t}</button>`;
+  }).join('');
   filterTagsEl.querySelectorAll('.filter-tag').forEach(btn => {
     btn.addEventListener('click', () => {
       filterTagsEl.querySelectorAll('.filter-tag').forEach(b => b.classList.remove('active'));
@@ -36,21 +45,21 @@ function render() {
   const q = searchEl.value.trim().toLowerCase();
   const filtered = allPosts.filter(p => {
     const matchesTag = !activeTag || (p.tags || []).includes(activeTag);
-    const haystack = [p.title, p.summary, p.platform, ...(p.tags || [])].join(' ').toLowerCase();
+    const haystack = [pick(p, 'title'), pick(p, 'summary'), p.platform, ...(p.tags || [])].join(' ').toLowerCase();
     const matchesSearch = !q || haystack.includes(q);
     return matchesTag && matchesSearch;
   });
 
   if (!filtered.length) {
-    listEl.innerHTML = '<div class="empty-state">Aucun writeup ne correspond.</div>';
+    listEl.innerHTML = `<div class="empty-state">${tr('noMatch')}</div>`;
     return;
   }
 
   listEl.innerHTML = filtered.map(p => `
     <a class="writeup-row" href="writeup.html?slug=${encodeURIComponent(p.slug)}">
       <div class="wr-main">
-        <h4>${escapeHtml(p.title)}</h4>
-        <p>${escapeHtml(p.summary || '')}</p>
+        <h4>${escapeHtml(pick(p, 'title'))}</h4>
+        <p>${escapeHtml(pick(p, 'summary') || '')}</p>
         <div class="tag-row" style="margin-top:8px;">${(p.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
       </div>
       <div class="wr-meta">

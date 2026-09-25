@@ -18,10 +18,10 @@
     <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="index.html#about">whoami</a>
-      <a href="index.html#platforms">plateformes</a>
-      <a href="index.html#skills">compétences</a>
-      <a href="index.html#experience">parcours</a>
-      <a href="index.html#projects">projets</a>
+      <a href="index.html#platforms" data-i18n="nav.platforms">plateformes</a>
+      <a href="index.html#skills" data-i18n="nav.skills">compétences</a>
+      <a href="index.html#experience" data-i18n="nav.experience">parcours</a>
+      <a href="index.html#projects" data-i18n="nav.projects">projets</a>
       <a href="writeups.html" class="active">writeups</a>
       <a href="index.html#contact">contact</a>
       <a href="cv/Elijah_Calonnec_CV.pdf" target="_blank" class="btn btn-primary" style="padding:7px 16px;">CV ↓</a>
@@ -33,7 +33,7 @@
   <div class="container">
     <div class="section-label">writeups</div>
     <h1>CTF, OSINT &amp; Threat Intelligence</h1>
-    <p style="color:var(--text-dim); max-width:640px; margin-top:12px;">
+    <p style="color:var(--text-dim); max-width:640px; margin-top:12px;" data-i18n="writeups.intro">
       Méthodologie, outils et enseignements tirés de mes challenges : Root-Me, Trace Labs, OSINT CTFs et exercices de threat intel.
     </p>
   </div>
@@ -42,7 +42,7 @@
 <section style="padding-top:48px;">
   <div class="container">
     <div class="writeups-toolbar">
-      <input type="text" id="searchBox" class="search-box" placeholder="Rechercher un writeup (titre, plateforme, outil...)">
+      <input type="text" id="searchBox" data-i18n-placeholder="writeups.search" class="search-box" placeholder="Rechercher un writeup (titre, plateforme, outil...)">
       <div class="filter-tags" id="filterTags"></div>
     </div>
     <div id="writeupList" class="writeup-list"></div>
@@ -55,6 +55,7 @@
   </div>
 </footer>
 
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/writeups.js"></script>
 </body>

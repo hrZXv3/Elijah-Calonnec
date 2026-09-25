@@ -49,33 +49,43 @@ if (sections.length && navAnchors.length) {
 // latest writeups preview on homepage
 const latestWriteupsEl = document.getElementById('latestWriteups');
 if (latestWriteupsEl) {
-  fetch('writeups/manifest.json')
-    .then(r => r.json())
-    .then(posts => {
-      const sorted = posts.slice().sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
-      if (!sorted.length) {
-        latestWriteupsEl.innerHTML = '<div class="empty-state">Aucun writeup publié pour le moment.</div>';
-        return;
-      }
-      latestWriteupsEl.innerHTML = sorted.map(p => `
+  let latestPosts = null;
+  const renderLatest = () => {
+    if (!latestPosts) return;
+    if (!latestPosts.length) {
+      latestWriteupsEl.innerHTML = `<div class="empty-state">${tr('noWriteups')}</div>`;
+      return;
+    }
+    latestWriteupsEl.innerHTML = latestPosts.map(p => `
         <a class="writeup-row" href="writeup.html?slug=${encodeURIComponent(p.slug)}">
           <div class="wr-main">
-            <h4>${escapeHtml(p.title)}</h4>
-            <p>${escapeHtml(p.summary || '')}</p>
+            <h4>${escapeHtml(pick(p, 'title'))}</h4>
+            <p>${escapeHtml(pick(p, 'summary') || '')}</p>
           </div>
           <div class="wr-meta">
             <span class="wr-date">${formatDate(p.date)}</span>
           </div>
         </a>
       `).join('');
+  };
+  fetch('writeups/manifest.json')
+    .then(r => r.json())
+    .then(posts => {
+      latestPosts = posts.slice().sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
+      renderLatest();
     })
-    .catch(() => { latestWriteupsEl.innerHTML = '<div class="empty-state">Impossible de charger les writeups.</div>'; });
+    .catch(() => { latestWriteupsEl.innerHTML = `<div class="empty-state">${tr('loadError')}</div>`; });
+  document.addEventListener('langchange', renderLatest);
 }
+
+// helpers i18n (fonctionnent aussi si i18n.js n'est pas chargé)
+function tr(key) { return window.I18N ? I18N.t(key) : key; }
+function pick(obj, field) { return window.I18N ? I18N.pick(obj, field) : obj[field]; }
 
 function formatDate(iso) {
   if (!iso) return '';
   const d = new Date(iso);
-  return d.toLocaleDateString('fr-FR', { year: 'numeric', month: 'short', day: 'numeric' });
+  return d.toLocaleDateString(window.I18N ? I18N.locale() : 'fr-FR', { year: 'numeric', month: 'short', day: 'numeric' });
 }
 
 function escapeHtml(str) {

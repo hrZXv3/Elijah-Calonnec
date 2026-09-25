@@ -1,19 +1,33 @@
 [
-{
-  "slug": "paypal-pay-phishing-investigation",
-  "title": "Anatomie d'un kit de phishing PayPal de la découverte à l'attribution du domaine",
-  "summary": "Investigation d'un kit de phishing PayPal en 3 étapes exfiltrant vers Discord, avec découverte d'un domaine ancien réactivé après abandon.",
-  "date": "2026-09-14",
-  "platform": "OSINT / CTI",
-  "tags": ["Phishing", "OSINT", "CTI", "Threat Intel"]
-},
-{
-  "slug": "cyberdefenders-lespion",
-  "title": "L'espion : pister une menace interne par OSINT",
-  "summary": "Investigation OSINT d'un ancien employé soupçonné de fuite de données, du premier indice à la géolocalisation, via le lab CyberDefenders L'espion.",
-  "date": "2026-09-25",
-  "platform": "CyberDefenders",
-  "tags": ["OSINT", "CTI", "Insider Threat", "Géolocalisation", "CyberDefenders"]
-}
+  {
+    "slug": "paypal-pay-phishing-investigation",
+    "title": "Anatomie d'un kit de phishing PayPal de la découverte à l'attribution du domaine",
+    "title_en": "Anatomy of a PayPal phishing kit, from discovery to domain attribution",
+    "summary": "Investigation d'un kit de phishing PayPal en 3 étapes exfiltrant vers Discord, avec découverte d'un domaine ancien réactivé après abandon.",
+    "summary_en": "Investigation of a 3-stage PayPal phishing kit exfiltrating to Discord, uncovering an old domain revived after years of abandonment.",
+    "date": "2026-09-14",
+    "platform": "OSINT / CTI",
+    "tags": [
+      "Phishing",
+      "OSINT",
+      "CTI",
+      "Threat Intel"
+    ]
+  },
+  {
+    "slug": "cyberdefenders-lespion",
+    "title": "L'espion : pister une menace interne par OSINT",
+    "title_en": "L'espion: tracking an insider threat with OSINT",
+    "summary": "Investigation OSINT d'un ancien employé soupçonné de fuite de données, du premier indice à la géolocalisation, via le lab CyberDefenders L'espion.",
+    "summary_en": "OSINT investigation of a former employee suspected of leaking data, from the first clue to geolocation, through the CyberDefenders L'espion lab.",
+    "date": "2026-09-25",
+    "platform": "CyberDefenders",
+    "tags": [
+      "OSINT",
+      "CTI",
+      "Insider Threat",
+      "Géolocalisation",
+      "CyberDefenders"
+    ]
+  }
 ]
-
