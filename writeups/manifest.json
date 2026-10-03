@@ -39,5 +39,20 @@
   "date": "2026-09-25",
   "platform": "CyberDefenders",
   "tags": ["OSINT", "CTI", "WHOIS", "Wayback Machine", "CyberDefenders"]
+},
+{
+  "slug": "oterihack-ctf-osint",
+  "title": "OteriHack CTF : 14 challenges OSINT résolus",
+  "title_en": "OteriHack CTF: 14 OSINT challenges solved",
+  "summary": "Writeup de la catégorie OSINT du CTF OteriHack : 14 challenges sur 15 résolus (5 528 points), du GEOINT au SOCMINT en passant par des enquêtes multi-étapes.",
+  "summary_en": "Writeup of the OSINT category of the OteriHack CTF: 14 out of 15 challenges solved (5,528 points), from GEOINT to SOCMINT through multi-step investigations.",
+  "date": "2026-10-01",
+  "platform": "OteriHack",
+  "tags": [
+    "OSINT",
+    "CTF",
+    "GEOINT",
+    "SOCMINT"
+  ]
 }
 ]
