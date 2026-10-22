@@ -348,7 +348,7 @@ section:last-of-type { border-bottom: none; }
 .cp-meta { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 0.8rem; color: var(--text-dim); margin-bottom: 8px; }
 .cp-meta [data-challenge-day] { color: var(--accent); font-weight: 700; }
 .cp-bar { height: 8px; border-radius: 100px; background: var(--bg-alt); border: 1px solid var(--border-strong); overflow: hidden; }
-.cp-fill { display: block; height: 100%; width: 4%; background: var(--accent); border-radius: inherit; transition: width .8s ease; }
+.cp-fill { display: block; height: 100%; width: 0; background: var(--accent); border-radius: inherit; transition: width .8s ease; }
 
 /* ---------- writeups ---------- */
 .writeups-toolbar {
@@ -408,7 +408,7 @@ section:last-of-type { border-bottom: none; }
 .wr-header .tag-row { margin-bottom: 20px; }
 .wr-header h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 .wr-header .wr-sub { color: var(--text-dim); font-family: var(--mono); font-size: 0.86rem; display: flex; gap: 20px; flex-wrap: wrap; }
-.wr-body { padding: 48px 0 96px; max-width: 800px; margin: 0 auto; }
+.wr-body { padding: 48px 24px 96px; max-width: 848px; margin: 0 auto; }
 .wr-body h1, .wr-body h2, .wr-body h3 { margin-top: 1.6em; }
 .wr-body h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
 .wr-body p { color: var(--text-dim); margin-bottom: 1.1em; }
@@ -496,3 +496,31 @@ footer a:hover { color: var(--accent); }
   padding: 10px 14px;
   margin-bottom: 28px;
 }
+
+/* ---------- page CTI Challenge ---------- */
+.ch-card-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.ch-header h1 { margin-bottom: 20px; }
+.ch-header .ch-progress { margin-bottom: 24px; }
+.ch-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.ch-pipeline { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 8px 0 12px; }
+.ch-step { font-family: var(--mono); font-size: 0.8rem; color: var(--text); background: var(--surface); border: 1px solid var(--border-strong); padding: 8px 14px; border-radius: var(--radius); }
+.ch-step:last-child { color: var(--accent); border-color: var(--accent); background: var(--accent-glow); }
+.ch-arrow { color: var(--text-faint); font-family: var(--mono); }
+.ch-week { margin: 24px 0; }
+.ch-week-label { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); margin-bottom: 10px; }
+.ch-week-label span { color: var(--text-faint); margin-left: 8px; }
+.ch-days { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+.wr-body a.ch-day { text-decoration: none; color: inherit; }
+.ch-day { display: flex; flex-direction: column; gap: 6px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; transition: border-color .15s, transform .15s; }
+.ch-day-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.ch-day-num { font-family: var(--mono); font-weight: 700; font-size: 0.85rem; color: var(--text); }
+.ch-status { font-family: var(--mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: .06em; color: var(--text-faint); }
+.ch-day-title { font-size: 0.84rem; line-height: 1.35; color: var(--text); }
+.ch-day-skills { font-size: 0.72rem; color: var(--text-faint); margin-top: auto; }
+.ch-day.is-todo { opacity: .55; }
+.ch-day.is-doing { border-color: var(--accent-warn); }
+.ch-day.is-doing .ch-status { color: var(--accent-warn); }
+.ch-day.is-done { border-color: var(--accent); background: linear-gradient(135deg, var(--accent-glow), transparent 70%), var(--surface); }
+.ch-day.is-done .ch-status { color: var(--accent); }
+a.ch-day:hover { transform: translateY(-2px); border-color: var(--accent); }
+.ch-empty { font-family: var(--mono); font-size: 0.9rem; color: var(--text-dim); border: 1px dashed var(--border-strong); border-radius: var(--radius); padding: 20px; }

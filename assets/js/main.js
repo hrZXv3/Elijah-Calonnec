@@ -25,11 +25,42 @@ if (revealEls.length) {
   revealEls.forEach(el => io.observe(el));
 }
 
-// CTI Challenge : avancement (mettre à jour CHALLENGE_DAY chaque jour)
-const CHALLENGE_DAY = 1;
-const CHALLENGE_TOTAL = 25;
-document.querySelectorAll('[data-challenge-day]').forEach(el => { el.textContent = String(CHALLENGE_DAY).padStart(2, '0'); });
-document.querySelectorAll('.cp-fill').forEach(el => { el.style.width = (CHALLENGE_DAY / CHALLENGE_TOTAL * 100) + '%'; });
+// CTI Challenge : l'avancement est lu dans le tableau du README de cti-challenge
+// (colonne Statut : "fait" / "en cours" / "à faire"). Rien à mettre à jour ici.
+const CH_REPO = 'hrZXv3/cti-challenge';
+const CH_BRANCH = 'main';
+const CH_RAW = `https://raw.githubusercontent.com/${CH_REPO}/${CH_BRANCH}/`;
+const CH_TOTAL = 25;
+
+function chStatus(raw) {
+  const s = (raw || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+  if (s === 'fait' || s === 'done' || s === 'termine') return 'done';
+  if (s === 'en cours' || s === 'in progress') return 'doing';
+  return 'todo';
+}
+
+// Lignes "| J01 | 26/10 | [Titre](./dossier/) | Compétences | statut |"
+function chParseProjects(md) {
+  return md.split('\n')
+    .filter(l => /^\|\s*J\d{2}\s*\|/.test(l))
+    .map(l => {
+      const c = l.split('|').slice(1, -1).map(x => x.trim());
+      const link = c[2].match(/\[([^\]]+)\]\(([^)]+)\)/);
+      const dir = link ? link[2].replace(/^\.\//, '').replace(/\/$/, '') : '';
+      return { day: c[0], date: c[1], title: link ? link[1] : c[2], dir, skills: c[3], status: chStatus(c[4]) };
+    });
+}
+
+if (document.querySelector('[data-challenge-day]')) {
+  fetch(CH_RAW + 'README.md', { cache: 'no-cache' })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(md => {
+      const done = chParseProjects(md).filter(p => p.status === 'done').length;
+      document.querySelectorAll('[data-challenge-day]').forEach(el => { el.textContent = String(done).padStart(2, '0'); });
+      document.querySelectorAll('.cp-fill').forEach(el => { el.style.width = (done / CH_TOTAL * 100) + '%'; });
+    })
+    .catch(() => { /* GitHub injoignable : on garde 00/25 */ });
+}
 
 // footer year
 const yearEl = document.getElementById('year');
