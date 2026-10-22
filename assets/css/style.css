@@ -330,6 +330,26 @@ section:last-of-type { border-bottom: none; }
 .project-link { font-family: var(--mono); font-size: 0.82rem; color: var(--accent); display: inline-flex; align-items: center; gap: 6px; }
 .project-link:hover { text-decoration: underline; }
 
+/* ---------- CTI Challenge (projet mis en avant) ---------- */
+.live-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); background: var(--accent-glow); border: 1px solid var(--accent); padding: 4px 10px; border-radius: 100px; white-space: nowrap; }
+.live-tag .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 1.6s infinite; }
+
+.live-banner { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 28px; padding: 6px 16px 6px 6px; border: 1px solid var(--border-strong); border-radius: 100px; background: var(--surface); font-size: 0.88rem; color: var(--text); transition: border-color .15s, transform .15s; }
+.live-banner:hover { border-color: var(--accent); transform: translateY(-1px); }
+.live-banner .live-day { font-family: var(--mono); font-size: 0.82rem; color: var(--accent); }
+@media (max-width: 600px) { .live-banner { border-radius: var(--radius-lg); padding: 10px 14px; gap: 8px; } }
+
+.project-card.featured { grid-column: 1 / -1; padding: 32px; border-color: var(--accent); background: linear-gradient(135deg, var(--accent-glow), transparent 60%), var(--surface); box-shadow: 0 0 0 1px var(--accent-glow), 0 12px 40px -18px var(--accent); }
+.featured-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.project-card.featured h3 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin-bottom: 10px; }
+.featured-sub { color: var(--text-dim); font-weight: 500; font-size: 0.6em; }
+.project-card.featured p { font-size: 1rem; max-width: 720px; flex-grow: 0; }
+.challenge-progress { max-width: 520px; margin-bottom: 20px; }
+.cp-meta { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 0.8rem; color: var(--text-dim); margin-bottom: 8px; }
+.cp-meta [data-challenge-day] { color: var(--accent); font-weight: 700; }
+.cp-bar { height: 8px; border-radius: 100px; background: var(--bg-alt); border: 1px solid var(--border-strong); overflow: hidden; }
+.cp-fill { display: block; height: 100%; width: 4%; background: var(--accent); border-radius: inherit; transition: width .8s ease; }
+
 /* ---------- writeups ---------- */
 .writeups-toolbar {
   display: flex;

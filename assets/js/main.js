@@ -25,6 +25,12 @@ if (revealEls.length) {
   revealEls.forEach(el => io.observe(el));
 }
 
+// CTI Challenge : avancement (mettre à jour CHALLENGE_DAY chaque jour)
+const CHALLENGE_DAY = 1;
+const CHALLENGE_TOTAL = 25;
+document.querySelectorAll('[data-challenge-day]').forEach(el => { el.textContent = String(CHALLENGE_DAY).padStart(2, '0'); });
+document.querySelectorAll('.cp-fill').forEach(el => { el.style.width = (CHALLENGE_DAY / CHALLENGE_TOTAL * 100) + '%'; });
+
 // footer year
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();

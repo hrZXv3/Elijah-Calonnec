@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=20261022">
 </head>
 <body>
 
@@ -31,6 +31,11 @@
 
 <header class="hero" id="top">
   <div class="container">
+    <a href="#cti-challenge" class="live-banner">
+      <span class="live-tag"><span class="pulse"></span><span data-i18n="challenge.live">en cours</span></span>
+      <span data-i18n="challenge.banner">CTI Challenge : 25 projets CTI en 25 jours ouvrés</span>
+      <span class="live-day"><span data-challenge-day>01</span>/25 →</span>
+    </a>
     <div class="hero-kicker">root@hrZXv3:~$ whoami<span class="cursor"></span></div>
     <h1 data-i18n="hero.title">Elijah Calonnec, spécialisé en <span class="highlight">Cyber Threat Intelligence</span> &amp; OSINT.</h1>
     <p class="lead" data-i18n="hero.lead">
@@ -239,12 +244,20 @@
     <h2 data-i18n="projects.title">Projets personnels</h2>
     <p style="color:var(--text-dim); max-width:640px; margin-bottom:12px;" data-i18n="projects.intro">Code disponible sur mon GitHub, sous le pseudo <span style="font-family:var(--mono); color:var(--accent);">hrZXv3</span>.</p>
     <div class="projects-grid" style="margin-top:32px;">
-     <div class="project-card">
-   	 	<div class="project-top"><h4>CTI Challenge</h4><span class="project-year">2026</span></div>
-   	 	<p data-i18n="projects.challenge">Un projet CTI par jour ouvré, du 26 octobre au 27 novembre 2026 : collecte d'IOC, investigation d'infrastructures, règles de détection, fiches acteurs, jusqu'à une chaîne complète importée dans OpenCTI. En cours : J01/25.</p>
-   		 <div class="tag-row" style="margin-bottom:14px;"><span class="tag">Python</span><span class="tag">ATT&amp;CK</span><span class="tag">YARA</span><span class="tag">Sigma</span><span class="tag">STIX</span><span class="tag">OpenCTI</span></div>
-   		 <a href="https://github.com/hrZXv3/cti-challenge" target="_blank" class="project-link" data-i18n="projects.challengeLink">Voir le repo →</a>
-     </div>
+      <div class="project-card featured" id="cti-challenge">
+        <div class="featured-head">
+          <span class="live-tag"><span class="pulse"></span><span data-i18n="challenge.live">en cours</span></span>
+          <span class="project-year">26.10 → 27.11.2026</span>
+        </div>
+        <h3>CTI Challenge <span class="featured-sub" data-i18n="challenge.sub">· 25 jours, 25 projets</span></h3>
+        <p data-i18n="projects.challenge">Un projet CTI par jour ouvré, du 26 octobre au 27 novembre 2026 : collecte d'IOC, investigation d'infrastructures, règles de détection, fiches acteurs, jusqu'à une chaîne complète importée dans OpenCTI.</p>
+        <div class="challenge-progress">
+          <div class="cp-meta"><span data-i18n="challenge.progress">progression</span><span><span data-challenge-day>01</span>/25</span></div>
+          <div class="cp-bar"><span class="cp-fill"></span></div>
+        </div>
+        <div class="tag-row" style="margin-bottom:20px;"><span class="tag">Python</span><span class="tag">ATT&amp;CK</span><span class="tag">YARA</span><span class="tag">Sigma</span><span class="tag">STIX</span><span class="tag">OpenCTI</span></div>
+        <div><a href="https://github.com/hrZXv3/cti-challenge" target="_blank" class="btn btn-primary" data-i18n="projects.challengeLink">Voir le repo →</a></div>
+      </div>
       <div class="project-card">
         <div class="project-top"><h4>Threat Intelligence / Phishing Infrastructure Analysis</h4><span class="project-year">2025</span></div>
         <p data-i18n="projects.phishing">Identification et analyse d'infrastructures liées à des campagnes de phishing : collecte d'indicateurs, analyse de domaines et mapping des TTPs selon MITRE ATT&amp;CK.</p>
@@ -318,7 +331,7 @@
   </div>
 </footer>
 
-<script src="assets/js/i18n.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/i18n.js?v=20261022"></script>
+<script src="assets/js/main.js?v=20261022"></script>
 </body>
 </html>
