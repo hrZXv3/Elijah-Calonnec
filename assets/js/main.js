@@ -29,7 +29,9 @@ if (revealEls.length) {
 // (colonne Statut : "fait" / "en cours" / "à faire"). Rien à mettre à jour ici.
 const CH_REPO = 'hrZXv3/cti-challenge';
 const CH_BRANCH = 'main';
-const CH_RAW = `https://raw.githubusercontent.com/${CH_REPO}/${CH_BRANCH}/`;
+// En local (localhost), on lit le dossier ../cti-challenge pour tester sans pousser
+const CH_LOCAL = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+const CH_RAW = CH_LOCAL ? '../cti-challenge/' : `https://raw.githubusercontent.com/${CH_REPO}/${CH_BRANCH}/`;
 const CH_TOTAL = 25;
 
 function chStatus(raw) {

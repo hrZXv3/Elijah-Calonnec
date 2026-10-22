@@ -74,7 +74,8 @@ function chRender(md) {
 // Liens et images relatifs -> GitHub, liens vers un dossier JXX -> page du projet
 function chFixLinks(root, baseDir) {
   const base = 'https://repo.invalid/' + (baseDir ? baseDir + '/' : '');
-  root.querySelectorAll('a[href], img[src]').forEach(el => {
+  // a.ch-day : cases de la grille générées par ce script, déjà correctes
+  root.querySelectorAll('a[href]:not(.ch-day), img[src]').forEach(el => {
     const attr = el.tagName === 'IMG' ? 'src' : 'href';
     const value = el.getAttribute(attr);
     if (/^([a-z]+:|#|\/\/)/i.test(value)) {
