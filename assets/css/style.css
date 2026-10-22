@@ -524,3 +524,15 @@ footer a:hover { color: var(--accent); }
 .ch-day.is-done .ch-status { color: var(--accent); }
 a.ch-day:hover { transform: translateY(-2px); border-color: var(--accent); }
 .ch-empty { font-family: var(--mono); font-size: 0.9rem; color: var(--text-dim); border: 1px dashed var(--border-strong); border-radius: var(--radius); padding: 20px; }
+
+/* ---------- pop-up CTI Challenge (accueil) ---------- */
+.ch-popup { position: fixed; right: 24px; bottom: 24px; z-index: 100; width: min(360px, calc(100vw - 32px)); padding: 22px; border: 1px solid var(--accent); border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--accent-glow), transparent 60%), var(--surface); box-shadow: 0 18px 50px -12px rgba(0, 0, 0, .7), 0 0 0 1px var(--accent-glow); opacity: 0; transform: translateY(16px); transition: opacity .3s ease, transform .3s ease; }
+.ch-popup.show { opacity: 1; transform: translateY(0); }
+.ch-popup h4 { font-size: 1.15rem; margin: 14px 0 8px; }
+.ch-popup p { color: var(--text-dim); font-size: 0.88rem; margin-bottom: 16px; }
+.ch-popup .challenge-progress { margin-bottom: 18px; }
+.ch-popup-close { position: absolute; top: 10px; right: 12px; background: none; border: none; color: var(--text-faint); font-size: 1.4rem; line-height: 1; cursor: pointer; padding: 4px 8px; border-radius: 6px; }
+.ch-popup-close:hover { color: var(--text); }
+.ch-popup-close:focus-visible { outline: 2px solid var(--accent); }
+@media (max-width: 600px) { .ch-popup { right: 16px; bottom: 16px; } }
+@media (prefers-reduced-motion: reduce) { .ch-popup { transition: none; } }

@@ -64,6 +64,32 @@ if (document.querySelector('[data-challenge-day]')) {
     .catch(() => { /* GitHub injoignable : on garde 00/25 */ });
 }
 
+// CTI Challenge : pop-up d'arrivée (une fois par visite)
+const chPopup = document.getElementById('chPopup');
+if (chPopup) {
+  const POPUP_KEY = 'chPopupSeen';
+  let seen = false;
+  try { seen = sessionStorage.getItem(POPUP_KEY) === '1'; } catch (e) { /* stockage indisponible */ }
+  const closePopup = () => {
+    chPopup.classList.remove('show');
+    try { sessionStorage.setItem(POPUP_KEY, '1'); } catch (e) { /* ignore */ }
+    setTimeout(() => { chPopup.hidden = true; }, 300);
+    document.removeEventListener('keydown', onKey);
+  };
+  const onKey = e => { if (e.key === 'Escape') closePopup(); };
+  if (!seen) {
+    setTimeout(() => {
+      chPopup.hidden = false;
+      requestAnimationFrame(() => chPopup.classList.add('show'));
+      document.addEventListener('keydown', onKey);
+    }, 1500);
+  }
+  document.getElementById('chPopupClose').addEventListener('click', closePopup);
+  document.getElementById('chPopupLink').addEventListener('click', () => {
+    try { sessionStorage.setItem(POPUP_KEY, '1'); } catch (e) { /* ignore */ }
+  });
+}
+
 // footer year
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();

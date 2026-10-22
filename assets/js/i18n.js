@@ -98,6 +98,8 @@
     'projects.challenge': 'One CTI project every working day, from October 26 to November 27, 2026: IOC collection, infrastructure investigation, detection rules, threat actor profiles, building up to a full pipeline imported into OpenCTI.',
     'projects.challengeLink': 'View the challenge →',
     'challenge.backHome': '← Back to projects',
+    'challenge.popup': '25 Cyber Threat Intelligence projects in 25 working days, from October 26 to November 27, 2026. Follow the progress day by day.',
+    'challenge.popupBtn': 'View the challenge →',
     'challenge.live': 'in progress',
     'challenge.sub': '· 25 days, 25 projects',
     'challenge.banner': 'CTI Challenge: 25 CTI projects in 25 working days',
