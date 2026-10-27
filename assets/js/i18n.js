@@ -12,6 +12,7 @@
     'nav.skills': 'skills',
     'nav.experience': 'background',
     'nav.projects': 'projects',
+    'nav.fiches': 'cheatsheets',
 
     // ---- hero ----
     'hero.title': 'Elijah Calonnec, specializing in <span class="highlight">Cyber Threat Intelligence</span> &amp; OSINT.',
@@ -122,7 +123,13 @@
     // ---- page writeups ----
     'writeups.intro': 'Methodology, tools and lessons learned from my challenges: Root-Me, Trace Labs, OSINT CTFs and threat intel exercises.',
     'writeups.search': 'Search writeups (title, platform, tool...)',
-    'writeup.back': '← All writeups'
+    'writeup.back': '← All writeups',
+
+    // ---- page fiches ----
+    'fiches.title': 'Methodology cheatsheets',
+    'fiches.intro': 'My working notes for CTI and OSINT: commands, tools and approaches I reuse from one investigation to the next.',
+    'fiches.search': 'Search cheatsheets (title, tool, topic...)',
+    'fiche.back': '← All cheatsheets'
   };
 
   // Textes générés par le JavaScript (listes, messages d'erreur...)

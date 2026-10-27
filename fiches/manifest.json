@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "pivot-infrastructure",
+    "title": "Pivot d'infrastructure : mémo des commandes",
+    "title_en": "Infrastructure pivoting: command cheatsheet",
+    "summary": "Commandes pour enquêter sur un domaine malveillant en sources ouvertes et de façon passive : DNS, whois, RDAP, crt.sh, ThreatFox et VirusTotal.",
+    "summary_en": "Commands to investigate a malicious domain passively with open sources: DNS, whois, RDAP, crt.sh, ThreatFox and VirusTotal.",
+    "date": "2026-10-27",
+    "platform": "Méthodo",
+    "tags": [
+      "Méthodo",
+      "Pivot",
+      "DNS",
+      "Infrastructure"
+    ]
+  }
+]
