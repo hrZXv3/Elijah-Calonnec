@@ -1,8 +1,8 @@
 [
   {
     "slug": "paypal-pay-phishing-investigation",
-    "title": "Anatomie d'un kit de phishing PayPal de la découverte à l'attribution du domaine",
-    "title_en": "Anatomy of a PayPal phishing kit, from discovery to domain attribution",
+    "title": "Anatomie d'un kit de phishing PayPal, de la découverte à la chronologie du domaine",
+    "title_en": "Anatomy of a PayPal phishing kit, from discovery to domain timeline",
     "summary": "Investigation d'un kit de phishing PayPal en 3 étapes exfiltrant vers Discord, avec découverte d'un domaine ancien réactivé après abandon.",
     "summary_en": "Investigation of a 3-stage PayPal phishing kit exfiltrating to Discord, uncovering an old domain revived after years of abandonment.",
     "date": "2026-09-14",
